@@ -47,7 +47,6 @@ class Nav extends Component {
               )}
               {!data.me && (
                 <Container>
-                  {" "}
                   <Title>Employee Tracker</Title>
                 </Container>
               )}
