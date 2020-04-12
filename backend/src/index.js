@@ -20,7 +20,7 @@ server.express.use((req, res, next) => {
   next();
 });
 
-// Server started!
+// Start server!
 server.start(
   {
     cors: {
