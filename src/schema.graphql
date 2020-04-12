@@ -1,0 +1,40 @@
+# import * from './generated/prisma.graphql'
+
+type SuccessMessage {
+  message: String
+}
+
+type Mutation {
+  createEmployee(
+    name: String
+    phoneNumber: String
+    email: String
+    salary: String
+    image: String
+    street: String
+    state: String
+    country: String
+    zipcode: String
+  ): Employee!
+  updateEmployee(
+    id: ID!
+    name: String
+    phoneNumber: String
+    email: String
+    salary: String
+    image: String
+    street: String
+    state: String
+    country: String
+    zipcode: String
+  ): Employee!
+  deleteEmployee(id: ID!): Employee
+  signup(email: String!, password: String!): User!
+  signin(email: String!, password: String!): User!
+  signout: SuccessMessage
+}
+
+type Query {
+  employees: [Employee]!
+  me: User
+}

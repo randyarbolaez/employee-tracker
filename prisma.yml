@@ -1,0 +1,8 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://employee-track-prod-f66c6d3b5d.herokuapp.com/employee-tr-prod/prod
+datamodel: datamodel.prisma
+secret: ${env:PRISMA_SECRET}
+
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
