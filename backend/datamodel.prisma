@@ -1,0 +1,23 @@
+type User {
+  id: ID! @unique @id
+  email: String! @unique
+  password: String!
+  created_at: DateTime! @createdAt
+  updated_at: DateTime! @updatedAt
+}
+
+type Employee {
+  id: ID! @unique @id
+  name: String!
+  phoneNumber: String!
+  email: String!
+  salary: String!
+  image:String!
+  street: String!
+  state: String!
+  country: String!
+  zipcode: String!
+  created_at: DateTime! @createdAt
+  updated_at: DateTime! @updatedAt
+  user:User!
+}
