@@ -69,10 +69,10 @@ const Mutations = {
   },
 
   async signin(parent, { email, password }, ctx, info) {
-    // check if there is a user with that username
+    // check if there is a user with that email
     const user = await ctx.db.query.user({ where: { email } });
     if (!user) {
-      throw new Error(`Email wasn't found for email | ${email}`);
+      throw new Error(`User wasn't found for email ${email}`);
     }
     // check if their password is correct
     const valid = await bcyrpt.compare(password, user.password);
