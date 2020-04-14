@@ -21,16 +21,15 @@ server.express.use((req, res, next) => {
   next();
 });
 
-server.express.use(cors()); // Make sure you have express initialised before this.
-
 // Server started!
 server.start(
-  // {
-  //   cors: {
-  //     credentials: true,
-  //     origin: process.env.FRONTEND_URL,
-  //   },
-  // },
+  {
+    cors: {
+      credentials: true,
+      origin: process.env.FRONTEND_URL,
+      allowedHeaders: process.env.FRONTEND_URL,
+    },
+  },
   (details) => {
     console.log(`http://localhost:${details.port}`);
   }
