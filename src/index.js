@@ -1,5 +1,6 @@
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 require("dotenv").config();
 
 const createServer = require("./createServer");
@@ -19,6 +20,8 @@ server.express.use((req, res, next) => {
   }
   next();
 });
+
+server.express.use(cors()); // Make sure you have express initialised before this.
 
 // Server started!
 server.start(
