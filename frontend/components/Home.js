@@ -31,32 +31,30 @@ let WrapperRight = styled.div`
 class Home extends Component {
   render() {
     return (
-      <div>
-        <User>
-          {({ data }) => {
-            console.log(data, "DATA");
-            return (
-              <div>
-                {!data.me && (
-                  <Container>
-                    <WrapperLeft>
-                      <Signin />
-                    </WrapperLeft>
-                    <WrapperRight>
-                      <Signup />
-                    </WrapperRight>
-                  </Container>
-                )}
-                {data.me && (
-                  <Container>
-                    <Employees />
-                  </Container>
-                )}
-              </div>
-            );
-          }}
-        </User>
-      </div>
+      <User>
+        {({ data: { me } }) => {
+          console.log(me, "me");
+          return (
+            <div>
+              {!me && (
+                <Container>
+                  <WrapperLeft>
+                    <Signin />
+                  </WrapperLeft>
+                  <WrapperRight>
+                    <Signup />
+                  </WrapperRight>
+                </Container>
+              )}
+              {me && (
+                <Container>
+                  <Employees />
+                </Container>
+              )}
+            </div>
+          );
+        }}
+      </User>
     );
   }
 }

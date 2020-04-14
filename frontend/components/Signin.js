@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
-import { CURRENT_USER_QUERY } from "./User";
 import styled from "styled-components";
+
+import { CURRENT_USER_QUERY } from "./User";
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -104,7 +105,6 @@ class Signin extends Component {
                 e.preventDefault();
                 const res = await signin();
                 this.setState({ email: "", password: "" });
-                console.log(res, "RES", "SIGNIN");
               }}
             >
               <Fieldset disabled={loading}>
@@ -114,7 +114,7 @@ class Signin extends Component {
                     Email or Password are incorrect!
                   </ErrorText>
                 )}
-                <label htmlFor="Columns">
+                <label htmlFor="email">
                   <InputTop
                     className="Top"
                     type="email"
@@ -124,7 +124,7 @@ class Signin extends Component {
                     onChange={this.saveToState}
                   />
                 </label>
-                <label htmlFor="Columns">
+                <label htmlFor="password">
                   <Input
                     type="password"
                     name="password"
