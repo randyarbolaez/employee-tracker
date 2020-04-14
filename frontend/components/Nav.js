@@ -26,37 +26,34 @@ let Title = styled.h1`
 class Nav extends Component {
   render() {
     return (
-      <div>
-        <p>hello</p>
-      </div>
-      // <User>
-      //   {({ data }) => {
-      //     return (
-      //       <div>
-      //         {!data.me && (
-      //           <Container>
-      //             <Link href="/">
-      //               <a>
-      //                 <Signout />
-      //               </a>
-      //             </Link>
-      //             <Title>Employee Tracker</Title>
-      //             <Link href="/add">
-      //               <a>
-      //                 <h1>+</h1>
-      //               </a>
-      //             </Link>
-      //           </Container>
-      //         )}
-      //         {!data.me && (
-      //           <Container>
-      //             <Title>Employee Tracker</Title>
-      //           </Container>
-      //         )}
-      //       </div>
-      //     );
-      //   }}
-      // </User>
+      <User>
+        {({ data }) => {
+          return (
+            <div>
+              {data && (
+                <Container>
+                  <Link href="/">
+                    <a>
+                      <Signout />
+                    </a>
+                  </Link>
+                  <Title>Employee Tracker</Title>
+                  <Link href="/add">
+                    <a>
+                      <h1>+</h1>
+                    </a>
+                  </Link>
+                </Container>
+              )}
+              {!data && (
+                <Container>
+                  <Title>Employee Tracker</Title>
+                </Container>
+              )}
+            </div>
+          );
+        }}
+      </User>
     );
   }
 }
