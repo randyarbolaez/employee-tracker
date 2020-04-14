@@ -103,7 +103,7 @@ class Signin extends Component {
               method="post"
               onSubmit={async (e) => {
                 e.preventDefault();
-                const res = await signin();
+                await signin();
                 this.setState({ email: "", password: "" });
               }}
             >

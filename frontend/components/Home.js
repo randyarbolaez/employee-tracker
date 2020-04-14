@@ -31,32 +31,69 @@ let WrapperRight = styled.div`
 class Home extends Component {
   render() {
     return (
-      <User>
-        {({ data: { me } }) => {
-          console.log(me, "me");
-          return (
-            <div>
-              {!me && (
-                <Container>
-                  <WrapperLeft>
-                    <Signin />
-                  </WrapperLeft>
-                  <WrapperRight>
-                    <Signup />
-                  </WrapperRight>
-                </Container>
-              )}
-              {me && (
-                <Container>
-                  <Employees />
-                </Container>
-              )}
-            </div>
-          );
-        }}
-      </User>
+      <div>
+        <p>Hello</p>
+        <User>
+          {({ data }) => {
+            console.log(data, "DATA===");
+
+            return (
+              <div>
+                <Signin />
+              </div>
+            );
+          }}
+        </User>
+      </div>
+      // <User>
+      //   {({ data: { me } }) => {
+      //     return (
+      //       <div>
+      //         {!me && (
+      //           <Container>
+      //             <WrapperLeft>
+      //               <Signin />
+      //             </WrapperLeft>
+      //             <WrapperRight>
+      //               <Signup />
+      //             </WrapperRight>
+      //           </Container>
+      //         )}
+      //         {me && (
+      //           <Container>
+      //             <Employees />
+      //           </Container>
+      //         )}
+      //       </div>
+      //     );
+      //   }}
+      // </User>
     );
   }
 }
+
+// <User>
+//   {({ data: { me } }) => {
+//     return (
+//       <div>
+//         {!me && (
+//           <Container>
+//             <WrapperLeft>
+//               <Signin />
+//             </WrapperLeft>
+//             <WrapperRight>
+//               <Signup />
+//             </WrapperRight>
+//           </Container>
+//         )}
+//         {me && (
+//           <Container>
+//             <Employees />
+//           </Container>
+//         )}
+//       </div>
+//     );
+//   }}
+// </User>
 
 export default Home;
