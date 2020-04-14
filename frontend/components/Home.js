@@ -34,6 +34,7 @@ class Home extends Component {
       <div>
         <User>
           {({ data }) => {
+            console.log(data, "DATA");
             return (
               <div>
                 {!data.me && (

@@ -97,7 +97,6 @@ class Signin extends Component {
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
         {(signin, { error, loading }) => {
-          console.log(error);
           return (
             <form
               method="post"
@@ -105,6 +104,7 @@ class Signin extends Component {
                 e.preventDefault();
                 const res = await signin();
                 this.setState({ email: "", password: "" });
+                console.log(res, "RES", "SIGNIN");
               }}
             >
               <Fieldset disabled={loading}>

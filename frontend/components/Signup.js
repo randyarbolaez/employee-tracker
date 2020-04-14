@@ -89,14 +89,15 @@ class Signup extends Component {
         variables={this.state}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
-        {(signin, { error, loading }) => {
+        {(signup, { error, loading }) => {
           return (
             <form
               method="post"
               onSubmit={async (e) => {
                 e.preventDefault();
-                const res = await signin();
+                const res = await signup();
                 this.setState({ email: "", password: "" });
+                console.log(res, "RES", "SIGNUP");
               }}
             >
               <Fieldset disabled={loading}>
