@@ -23,7 +23,7 @@ let Fieldset = styled.fieldset`
 `;
 
 let Title = styled.h2`
-  color: #d7fff1;
+  color: #525b76;
   text-align: center;
   font-style: oblique;
   font-variant: small-caps;

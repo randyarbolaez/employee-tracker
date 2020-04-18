@@ -51,9 +51,9 @@ class Home extends Component {
                 </Wrapper>
               )}
               {me && (
-                <Container>
+                <Wrapper>
                   <Employees />
-                </Container>
+                </Wrapper>
               )}
             </Container>
           );

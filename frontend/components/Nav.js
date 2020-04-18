@@ -11,8 +11,7 @@ let Container = styled.div`
 `;
 
 let Title = styled.h1`
-  color: #ff9aa2;
-
+  color: #c6dbf0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-style: oblique;

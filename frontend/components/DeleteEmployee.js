@@ -15,14 +15,12 @@ const DELETE_EMPLOYEE_MUTATION = gql`
 
 let Button = styled.button`
   background: none;
-  color: #b8dbd9;
+  color: #ff9aa2;
   font-family: "Montserrat", sans-serif;
   font-style: italic;
   font-size: 1.3vmax;
   font-variant: small-caps;
-  border: 1px solid #ffe377;
-  border-top: none;
-  border-bottom: none;
+  border: none;
   width: 5vmax;
 `;
 

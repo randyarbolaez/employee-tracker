@@ -13,6 +13,7 @@ const ALL_EMPLOYEES_QUERY = gql`
       name
       phoneNumber
       email
+      jobTitle
       salary
       image
       street
@@ -27,17 +28,44 @@ const ALL_EMPLOYEES_QUERY = gql`
 `;
 
 let Table = styled.table`
-  /* display: flex;
-  justify-content: center; */
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: #425c66;
+  font-weight: bold;
   border-collapse: collapse;
-  width: 100%;
+  background: #c4d7f2;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  .title {
+    color: #f0f7ee;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+  }
 `;
 
 let Img = styled.img`
-  border-radius: 100%;
+  border-radius: 50%;
   width: 5vw;
-  /* vertical-align: middle; */
-  text-align: center;
+  margin: 1vh;
+`;
+
+let Thead = styled.thead`
+  background: #525b76;
+  border-top-right-radius: 50%;
+`;
+
+let Tr = styled.tr`
+  border-bottom: 1px solid #95afba;
+  padding-bottom: 5px;
+`;
+
+let Th = styled.th`
+  padding: 0 2vw;
+  text-align: left;
+  border: none;
 `;
 
 const Employees = () => (
@@ -56,40 +84,43 @@ const Employees = () => (
 
             return (
               <Table>
-                <thead>
+                <Thead>
                   <tr>
-                    <th>Employee</th>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>E-Mail</th>
-                    <th>Salary</th>
-                    <th>Location</th>
+                    <Th className="edge-left"> </Th>
+                    <Th className="title">Full Name</Th>
+                    <Th className="title">Job Title</Th>
+                    <Th className="title">Phone Number</Th>
+                    <Th className="title">E-Mail</Th>
+                    <Th className="title">Location</Th>
+                    <Th></Th>
                   </tr>
-                </thead>
+                </Thead>
                 {filteredEmployees.map((employee) => {
                   return (
                     <tbody key={employee.id}>
-                      <tr>
-                        <th>
+                      <Tr>
+                        <Th>
                           <Img
                             src={(employee.image && employee.image) || null}
-                            alt=""
+                            alt={employee.name}
                           />
-                        </th>
-                        <th>
-                          <span>{employee.name}</span>
-                        </th>
-                        <th>{employee.phoneNumber}</th>
-                        <th>{employee.email}</th>
-                        <th>{employee.salary}</th>
-                        <th>
-                          {employee.street} {employee.state.toUpperCase()}{" "}
+                        </Th>
+                        <Th>
+                          <span title={employee.email}>{employee.name}</span>
+                        </Th>
+                        <Th title={`Salary | ${employee.salary}`}>
+                          {employee.jobTitle}
+                        </Th>
+                        <Th>{employee.phoneNumber}</Th>
+                        <Th>{employee.email}</Th>
+                        <Th>
+                          {employee.street} {employee.state.toUpperCase()},{" "}
                           {employee.country.toUpperCase()} {employee.zipcode}
-                        </th>
-                        <th>
+                        </Th>
+                        <Th>
                           <DeleteEmployee id={employee.id} />
-                        </th>
-                      </tr>
+                        </Th>
+                      </Tr>
                     </tbody>
                   );
                 })}
