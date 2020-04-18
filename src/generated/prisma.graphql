@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/randy-arbolaez/employee-tracker/dev
-# timestamp: Tue Apr 07 2020 10:46:57 GMT-0400 (Eastern Daylight Time)
+# source: https://employee-track-prod-f66c6d3b5d.herokuapp.com/employee-tr-prod/prod
+# timestamp: Sat Apr 18 2020 09:26:51 GMT-0400 (Eastern Daylight Time)
 
 type AggregateEmployee {
   count: Int!
@@ -20,6 +20,7 @@ type Employee implements Node {
   id: ID!
   name: String!
   phoneNumber: String!
+  jobTitle: String!
   email: String!
   salary: String!
   image: String!
@@ -46,6 +47,7 @@ input EmployeeCreateInput {
   id: ID
   name: String!
   phoneNumber: String!
+  jobTitle: String!
   email: String!
   salary: String!
   image: String!
@@ -72,6 +74,8 @@ enum EmployeeOrderByInput {
   name_DESC
   phoneNumber_ASC
   phoneNumber_DESC
+  jobTitle_ASC
+  jobTitle_DESC
   email_ASC
   email_DESC
   salary_ASC
@@ -96,6 +100,7 @@ type EmployeePreviousValues {
   id: ID!
   name: String!
   phoneNumber: String!
+  jobTitle: String!
   email: String!
   salary: String!
   image: String!
@@ -147,6 +152,7 @@ input EmployeeSubscriptionWhereInput {
 input EmployeeUpdateInput {
   name: String
   phoneNumber: String
+  jobTitle: String
   email: String
   salary: String
   image: String
@@ -160,6 +166,7 @@ input EmployeeUpdateInput {
 input EmployeeUpdateManyMutationInput {
   name: String
   phoneNumber: String
+  jobTitle: String
   email: String
   salary: String
   image: String
@@ -298,6 +305,46 @@ input EmployeeWhereInput {
 
   """All values not ending with the given string."""
   phoneNumber_not_ends_with: String
+  jobTitle: String
+
+  """All values that are not equal to given value."""
+  jobTitle_not: String
+
+  """All values that are contained in given list."""
+  jobTitle_in: [String!]
+
+  """All values that are not contained in given list."""
+  jobTitle_not_in: [String!]
+
+  """All values less than the given value."""
+  jobTitle_lt: String
+
+  """All values less than or equal the given value."""
+  jobTitle_lte: String
+
+  """All values greater than the given value."""
+  jobTitle_gt: String
+
+  """All values greater than or equal the given value."""
+  jobTitle_gte: String
+
+  """All values containing the given string."""
+  jobTitle_contains: String
+
+  """All values not containing the given string."""
+  jobTitle_not_contains: String
+
+  """All values starting with the given string."""
+  jobTitle_starts_with: String
+
+  """All values not starting with the given string."""
+  jobTitle_not_starts_with: String
+
+  """All values ending with the given string."""
+  jobTitle_ends_with: String
+
+  """All values not ending with the given string."""
+  jobTitle_not_ends_with: String
   email: String
 
   """All values that are not equal to given value."""

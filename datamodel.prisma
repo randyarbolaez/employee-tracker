@@ -10,6 +10,7 @@ type Employee {
   id: ID! @unique @id
   name: String!
   phoneNumber: String!
+  jobTitle:String!
   email: String!
   salary: String!
   image:String!

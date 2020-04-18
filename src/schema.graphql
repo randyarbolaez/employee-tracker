@@ -8,6 +8,7 @@ type Mutation {
   createEmployee(
     name: String
     phoneNumber: String
+    jobTitle: String
     email: String
     salary: String
     image: String
@@ -20,6 +21,7 @@ type Mutation {
     id: ID!
     name: String
     phoneNumber: String
+    jobTitle: String
     email: String
     salary: String
     image: String
