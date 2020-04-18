@@ -8,78 +8,59 @@ import User from "./User";
 
 let Container = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
-let WrapperLeft = styled.div`
-  background: #231c20;
-  border-top-right-radius: 70%;
-  height: 80vh;
-  width: 50vw;
-  float: left;
-  margin-right: 1%;
-`;
+let Wrapper = styled.div``;
 
-let WrapperRight = styled.div`
-  background: #231c20;
-  border-top-left-radius: 70%;
-  width: 50vw;
-  float: right;
-  margin-left: 1%;
-  height: 80vh;
+let Span = styled.span`
+  button {
+    background: none;
+    border: none;
+    color: #878e99;
+    outline: none;
+  }
 `;
 
 class Home extends Component {
+  state = {
+    isSignUp: true,
+  };
   render() {
     return (
       <User>
-        {({ data }) => {
+        {({ data: { me } }) => {
           return (
-            <div>
-              {!data && (
-                <Container>
-                  <WrapperLeft>
-                    <Signin />
-                  </WrapperLeft>
-                  <WrapperRight>
-                    <Signup />
-                  </WrapperRight>
-                </Container>
+            <Container>
+              {!me && (
+                <Wrapper>
+                  {this.state.isSignUp ? <Signup /> : <Signin />}
+                  <Span
+                    onClick={() =>
+                      this.setState({
+                        isSignUp: !this.state.isSignUp,
+                      })
+                    }
+                  >
+                    <button>
+                      {this.state.isSignUp
+                        ? "* Already have an account? Sign In"
+                        : "* Don't have an account? Sign Up"}
+                    </button>
+                  </Span>
+                </Wrapper>
               )}
-              {data && (
+              {me && (
                 <Container>
                   <Employees />
                 </Container>
               )}
-            </div>
+            </Container>
           );
         }}
       </User>
     );
   }
 }
-
-// <User>
-//   {({ data: { me } }) => {
-//     return (
-//       <div>
-//         {!me && (
-//           <Container>
-//             <WrapperLeft>
-//               <Signin />
-//             </WrapperLeft>
-//             <WrapperRight>
-//               <Signup />
-//             </WrapperRight>
-//           </Container>
-//         )}
-//         {me && (
-//           <Container>
-//             <Employees />
-//           </Container>
-//         )}
-//       </div>
-//     );
-//   }}
-// </User>
 
 export default Home;

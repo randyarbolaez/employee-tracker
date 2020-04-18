@@ -15,7 +15,6 @@ const SIGNUP_MUTATION = gql`
 `;
 
 let Fieldset = styled.fieldset`
-  margin-left: 15rem;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -24,13 +23,13 @@ let Fieldset = styled.fieldset`
 `;
 
 let Title = styled.h2`
-  color: #acbdba;
+  color: #d7fff1;
   text-align: center;
   font-style: oblique;
   font-variant: small-caps;
   font-size: 5vmax;
-  font-family: "Montserrat", sans-serif;
-  margin-bottom: 2vmax;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0.6vmax;
 `;
 
 let InputTop = styled.input`
@@ -62,16 +61,16 @@ let ButtonDiv = styled.div`
 
 let Button = styled.button`
   background: none;
-  color: #b8dbd9;
+  color: #ff9aa2;
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
+  font-style: oblique;
   font-size: 2.3vmax;
   font-variant: small-caps;
   border: 1px solid #ffe377;
   border-top: none;
   width: 15vmax;
-  outline: none;
 `;
+
 class Signup extends Component {
   state = {
     email: "",

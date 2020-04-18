@@ -4,12 +4,6 @@ import Nav from "./Nav";
 import Meta from "./Meta";
 
 const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: 'Vertigo';
-  src: url('../static/VertigoFLF.ttf')format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
   html{
     box-sizing: border-box;
     font-size: 10px;
@@ -18,12 +12,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body{
-    background:#586F7C;
+    background-image: linear-gradient(#076585, #fff);
+    height:100vh;
     padding:0;
     margin:0;
     font-size:1.5rem;
     line-height:2;
-    overflow-y:scroll; /* Hide vertical scrollbar */
   }
   a{
     text-decoration:none;

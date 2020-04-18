@@ -35,11 +35,10 @@ const ADD_EMPLOYEE_MUTATION = gql`
 let Container = styled.div`
   display: flex;
   justify-content: center;
-  background: #000;
-  height: 40vh;
-  margin: 0 25vw 10vh 25vw;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 40%;
+  height: 50vh;
+  margin: 5vh 10vw 0 10vw;
+  text-align: center;
+  align-items: center;
 `;
 
 let Input = styled.input`
@@ -54,6 +53,21 @@ let Input = styled.input`
   font-size: 1.4vmax;
   color: #d9dee9;
   outline: none;
+  padding: 2vh;
+`;
+
+let InputBottom = styled.input`
+  margin-top: 1vmax;
+  margin-bottom: 1vmax;
+  margin-left: 1.4vmax;
+  background: none;
+  border: 1px solid #ffe377;
+  text-align: center;
+  border-top: none;
+  font-size: 1.4vmax;
+  color: #d9dee9;
+  outline: none;
+  padding: 2vh;
 `;
 
 let ButtonDiv = styled.div`
@@ -62,16 +76,17 @@ let ButtonDiv = styled.div`
 
 let Button = styled.button`
   background: none;
-  color: #b8dbd9;
+  color: #ff9aa2;
   font-family: "Montserrat", sans-serif;
   font-style: italic;
-  font-size: 1.4vmax;
+  font-size: 2vmax;
   margin-left: 4.2vmax;
   font-variant: small-caps;
   border: 1px solid #ffe377;
   border-top: none;
   width: 10vmax;
   outline: none;
+  padding: 2vh;
 `;
 
 class AddEmployee extends Component {
@@ -198,16 +213,14 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
               />
 
-              <Button type="submit">Submit</Button>
-
-              <Input
+              <InputBottom
                 type="file"
                 id="file"
                 name="file"
-                placeholder="Enter Employee Image"
                 required
                 onChange={this.uploadFile}
               />
+              <Button type="submit">Submit</Button>
             </form>
           </Container>
         )}

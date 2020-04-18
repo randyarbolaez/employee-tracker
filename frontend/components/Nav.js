@@ -8,16 +8,14 @@ let Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  background: #2f4550;
-  height: 20vh;
-  overflow: hidden;
 `;
 
 let Title = styled.h1`
-  color: #586f7c;
-  font-variant: small-caps;
+  color: #ff9aa2;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   font-style: oblique;
-  font-family: "Muli", sans-serif;
   font-size: 6vmax;
   text-align: center;
   margin-top: 0;
@@ -27,10 +25,11 @@ class Nav extends Component {
   render() {
     return (
       <User>
-        {({ data }) => {
+        {({ data: me }) => {
+          console.log(!!me.me, "ME", me.me);
           return (
             <div>
-              {data && (
+              {me.me && (
                 <Container>
                   <Link href="/">
                     <a>
@@ -45,7 +44,7 @@ class Nav extends Component {
                   </Link>
                 </Container>
               )}
-              {!data && (
+              {!me.me && (
                 <Container>
                   <Title>Employee Tracker</Title>
                 </Container>

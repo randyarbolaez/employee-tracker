@@ -24,7 +24,6 @@ let Button = styled.button`
   border-top: none;
   border-bottom: none;
   width: 5vmax;
-  outline: none;
 `;
 
 class DeleteEmployee extends Component {
