@@ -30,6 +30,7 @@ server.express.use(async (req, res, next) => {
   req.user = user;
   next();
 });
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 // Server started!
 server.start(
