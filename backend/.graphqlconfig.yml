@@ -3,7 +3,7 @@ projects:
     schemaPath: "src/schema.graphql"
     extensions:
       endpoints:
-        default: "https://employee-tracker-yoga-prod.herokuapp.com"
+        default: "http://employee-tracker-yoga-prod.herokuapp.com"
   prisma:
     schemaPath: "src/generated/prisma.graphql"
     extensions:
