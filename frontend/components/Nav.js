@@ -8,6 +8,7 @@ let Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  /* background-color: red; */
 `;
 
 let Title = styled.h1`
@@ -25,7 +26,6 @@ class Nav extends Component {
     return (
       <User>
         {({ data: me }) => {
-          console.log(!!me.me, "ME", me.me);
           return (
             <div>
               {me.me && (

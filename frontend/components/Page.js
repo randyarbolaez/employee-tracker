@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body{
-    background-image: linear-gradient(#076585, #fff);
+    background-color:#8ea8c3;
     height:100vh;
     padding:0;
     margin:0;
