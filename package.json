@@ -1,0 +1,44 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 7777",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "next build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "downshift": "^3.3.4",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "next": "^8.1.0",
+    "next-with-apollo": "^3.4.0",
+    "nprogress": "^0.2.0",
+    "react": "^16.10.1",
+    "react-apollo": "^2.5.8",
+    "react-dom": "^16.10.1",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6"
+  },
+  "production": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true
+        }
+      ]
+    ]
+  }
+}
